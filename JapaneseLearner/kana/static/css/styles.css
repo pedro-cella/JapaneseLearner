@@ -1,0 +1,36 @@
+header {
+    background-color: #f8f9fa; /* Cor de fundo do header */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra na parte inferior */
+    display: flex; /* Usando flexbox para alinhar itens */
+    align-items: center; /* Alinhando verticalmente os itens */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+h1 {
+    font-size: 50px; /* Tamanho da fonte */
+    margin: 0; /* Remove margens padrão */
+    color: #333; /* Cor do texto */
+    margin-left: 20px; /* Espaçamento à esquerda do título */
+}
+
+img {
+    width: 80px; /* Largura da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+}
+
+/* Estilo adicional para o corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+}
+
+.container {
+    padding: 20px; /* Espaçamento interno do conteúdo */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+.hiragana {
+    font-size: 100px;
+}

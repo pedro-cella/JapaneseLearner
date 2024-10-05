@@ -1,1 +1,45 @@
-env
+# Ambiente virtual
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Arquivos de banco de dados
+*.sqlite3
+
+# Arquivos de migração
+*/migrations/*.py
+*/migrations/*.pyc
+
+# Arquivos de configuração do IDE
+.idea/
+*.swp
+*.swo
+
+# Arquivos de cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Arquivos de configuração do Django
+*.log
+*.pot
+*.py[cod]
+*.db
+*.DS_Store
+
+# Arquivos de documentação gerados
+docs/_build/
+
+# Arquivos de configuração de ambiente
+.env
+*.env
+
+# Node.js (opcional)
+node_modules/
+package-lock.json
+
+# Arquivos de compilação (opcional)
+dist/
+build/
