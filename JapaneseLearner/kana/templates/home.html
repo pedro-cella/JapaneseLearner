@@ -3,11 +3,17 @@
 {% block content %}
 <div class="container">
     <h2>Bem-vindo ao seu aprendizado de japonês!</h2>
+
+    <h2>O que deseja praticar hoje ?</h2>
     
-    <!-- Exibição do Hiragana -->
-    <div class="hiragana">あ</div> <!-- Substitua por qualquer caractere Hiragana que deseja exibir -->
-    
-    <!-- Campo de entrada para o usuário escrever -->
-    <input type="text" placeholder="Escreva o Hiragana aqui...">
+    <div class="buttons">
+        <a href="{% url 'hiragana' %}">
+            <button class="btn">Hiragana</button>
+        </a>
+        <a href="{% url 'katakana' %}">
+            <button class="btn">Katakana</button>
+        </a>
+        <button class="btn">Kanji</button>
+    </div>
 </div>
 {% endblock %}

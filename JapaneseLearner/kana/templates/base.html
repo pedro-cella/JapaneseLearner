@@ -11,12 +11,18 @@
   <body>
     <!-- O conteúdo específico de cada página será injetado aqui --> 
     <header>
-        <img class="torii" src="{% static 'images/torii.png' %}" alt="icone">
+        <img src="{% static 'images/torii.png' %}" alt="icone">
         <h1>JapaneseLearner</h1>
     </header>
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
+    <footer>
+      <p>© 2024 JapaneseLearner.</p>
+      <a href="https://github.com/pedro-cella/JapaneseLearner" target="_blank">
+        <img class="github" src="{% static 'images/github.png' %}" alt="link_github">
+      </a>
+    </footer>
   </body>
 </html>

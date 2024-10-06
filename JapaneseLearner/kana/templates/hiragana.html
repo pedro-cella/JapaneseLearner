@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}  <!-- Carrega as tags estáticas -->
+
+{% block content %}
+<head>
+    <!-- Incluindo o arquivo de estilo específico para esta página -->
+    <link rel="stylesheet" href="{% static 'css/hiragana.css' %}">
+</head>
+<div class="container">
+    <h1>Hiragana</h1>
+    <h2>Adivinhe o kana</h2>
+
+    {% if selected_hiragana %}
+        <h1 class="kana">{{ selected_hiragana.kana }}</h1> <!-- Exibe o kana -->
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="hiragana_id" value="{{ selected_hiragana.id }}" />
+        <input type="text" name="user_input" placeholder="Digite o romaji..." required />
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if message == "CORRETO!" %}
+        <div id="mensagemCorreta">{{ message }}</div> <!-- Local para exibir a mensagem de resposta -->
+    {% elif message == "INCORRETO! O romaji correto é " %}
+        <div id="mensagemIncorreta">{{ message }}{{ correct_hiragana.romaji }}</div>
+    {% endif %}
+</div>
+{% endblock %}
