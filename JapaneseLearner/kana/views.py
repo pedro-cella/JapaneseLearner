@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Hiragana
+from .models import Hiragana, Katakana
 import random
 import pdb
 
@@ -51,4 +51,43 @@ def hiragana(request):
     return render(request, "hiragana.html", context)
 
 def katakana(request):
-    return render(request, "katakana.html")
+    # Obter todos os registros de hiragana
+    katakana_list = list(Katakana.objects.all())
+        
+    # Inicializar a variável selected_hiragana
+    selected_katakana = None
+    message = None
+    correct_katakana = None
+
+    # Se for um POST, verificar a resposta do usuário
+    if request.method == 'POST':
+        user_input = request.POST.get('user_input', '').strip()
+        katakana_id = request.POST.get('katakana_id')
+
+        # Recupera o kana que foi mostrado antes de submeter o formulário
+        try:
+            selected_katakana = Hiragana.objects.get(id=katakana_id)
+            correct_katakana = selected_katakana
+        except Hiragana.DoesNotExist:
+            selected_katakana = None
+
+        # Verifica se a resposta do usuário está correta
+        if selected_katakana and user_input == selected_katakana.romaji:
+            message = "CORRETO!"
+        else:
+            message = "INCORRETO! O romaji correto é "
+
+        # Gera um novo kana aleatório para a próxima exibição
+        selected_katakana = random.choice(katakana_list) if katakana_list else None
+    else:
+        # Gera um kana aleatório na primeira exibição
+        selected_katakana = random.choice(katakana_list) if katakana_list else None
+        
+    # Passar o kana selecionado e a mensagem para o template
+    context = {
+        'selected_katakana': selected_katakana,
+        'correct_katakana': correct_katakana,
+        'message': message,
+    }
+
+    return render(request, "katakana.html", context)

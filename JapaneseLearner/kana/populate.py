@@ -125,4 +125,4 @@ def populate_database():
         Katakana.objects.create(**k)
         
 if __name__ == '__main__':
-    populate_database()
+    populate_database() 

@@ -1,0 +1,59 @@
+/* Aumentar o tamanho do kana para 60px */
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #333;  /* Ajuste a cor conforme sua preferência */
+    text-align: center;  /* Centraliza o kana */
+    margin-bottom: 20px;  /* Dá um espaço abaixo do kana */
+}
+
+.kana {
+    font-size: 100px;
+}
+
+/* Estilizar o input como uma linha */
+input[name="user_input"] {
+    border: none;
+    border-bottom: 2px solid #333;  /* Apenas uma linha na parte inferior */
+    width: 300px;  /* Faz com que o input ocupe toda a largura possível */
+    padding: 10px;  /* Dá um pouco de espaçamento interno */
+    font-size: 18px;  /* Aumenta o tamanho do texto */
+    outline: none;  /* Remove a borda azul ao focar no campo */
+    box-sizing: border-box;  /* Garante que padding não afete o tamanho total */
+    text-align: center;  /* Centraliza o texto no input */
+}
+
+/* Estilizar o botão de envio abaixo da linha */
+button[type="submit"] {
+    display: block;
+    margin: 20px auto 0;  /* Centraliza o botão e coloca uma margem acima */
+    padding: 10px 20px;  /* Adiciona padding ao botão */
+    background-color: #CCC;  /* Cor do fundo do botão */
+    color: white;  /* Cor do texto */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: gray;
+    color: white;  /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilizar a área de mensagens */
+#mensagemCorreta {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00796b;  /* Cor do texto da mensagem */
+    text-align: center;
+}
+
+#mensagemIncorreta {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff5722;  /* Cor do texto da mensagem */
+    text-align: center;
+}
